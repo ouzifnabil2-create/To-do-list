@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #fafafa;
+  color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #f0f0f0;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+  color: #0a0a0a;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #171717;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #a3a3a3;
+}
+
+input[type="text"]:focus {
+  background: #ffffff;
+  border-color: #171717;
+}
+
+button#addBtn {
+  padding: 12px 20px;
+  background: #171717;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+button#addBtn:hover {
+  opacity: 0.85;
+}
+
+button#addBtn:active {
+  transform: scale(0.97);
+}
+
+.filter-group {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.filter-btn {
+  background: transparent;
+  color: #737373;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #171717;
+  background: #f5f5f5;
+}
+
+.filter-btn.active {
+  background: #e5e5e5;
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+li {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+li:hover {
+  border-color: #d4d4d4;
+}
+
+li span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #262626;
+  cursor: pointer;
+  flex: 1;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #a3a3a3;
+}
+
+.delete-btn {
+  background: transparent;
+  color: #a3a3a3;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+} 
+/* Variables pour le thème clair (par défaut) */
+:root {
+  --bg-color: #fafafa;
+  --card-bg: #ffffff;
+  --text-color: #171717;
+  --border-color: #f0f0f0;
+  --input-bg: #f5f5f5;
+  --btn-bg: #171717;
+  --btn-text: #ffffff;
+}
+
+/* Variables pour le thème sombre */
+body.dark-mode {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --border-color: #334155;
+  --input-bg: #0f172a;
+  --btn-bg: #38bdf8;
+  --btn-text: #0f172a;
+}
+
+/* Application des variables */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Style du bouton de bascule */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+#themeBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+#themeBtn:hover {
+  background: var(--input-bg);
+}
